@@ -1,0 +1,15 @@
+# Analytics Dev
+
+> Founder-led web development and AI systems studio in Mumbai, India.
+> Fixed-price websites for small businesses (₹35,000–₹1,20,000, 2–4 weeks)
+> and production AI/data systems for healthcare, construction, finance, and gaming.
+
+## Services
+- [Small Business Websites](https://analyticsdev.xyz/small-business-websites): Fixed-price packages, pricing and inclusions.
+- [Pricing](https://analyticsdev.xyz/pricing): All tiers with what is and isn't included.
+- [AI & Data Systems](https://analyticsdev.xyz/services): Autonomous agents, pipelines, decision systems.
+
+## Company
+- [About](https://analyticsdev.xyz/about): Founder, location, sectors served.
+- [Projects](https://analyticsdev.xyz/projects): Selected work with outcomes.
+- [Contact](https://analyticsdev.xyz/contact): hello@analyticsdev.xyz

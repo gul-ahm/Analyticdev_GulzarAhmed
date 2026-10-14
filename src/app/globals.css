@@ -1,0 +1,275 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  --animate-pulse-slow: pulse 15s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 30s ease-in-out infinite;
+
+  @keyframes float {
+    0% {
+      transform: translate(0px, 0px);
+    }
+
+    50% {
+      transform: translate(20px, -20px);
+    }
+
+    100% {
+      transform: translate(0px, 0px);
+    }
+  }
+}
+
+
+
+html {
+  color-scheme: light;
+  /* Native scroll is driven by the proxy height div */
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff !important;
+}
+
+body {
+  background: #ffffff !important;
+  color: #171717 !important;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  /* overscroll-behavior: none; Optional: user can decide */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Force hardware acceleration for commonly animated layers */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Luxury Button Interactions */
+.btn-primary {
+  transition: all 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  transition-duration: 100ms;
+}
+
+/* Premium hover states globally */
+a,
+button {
+  transition: all 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Utility for hiding scrollbar in mobile swipers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Global Mobile Zoom Override */
+@media (max-width: 1024px) {
+  html {
+    zoom: 0.85;
+  }
+}
+
+/* Arc gallery on the projects page */
+@keyframes arc-rise {
+  from { opacity: 0; transform: translate(-50%, 62%); }
+  to   { opacity: 1; transform: translate(-50%, 50%); }
+}
+@keyframes arc-fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.arc-card { animation: arc-rise 0.8s ease-out; }
+.arc-copy { animation: arc-fade 0.8s ease-out; }
+
+@media (prefers-reduced-motion: reduce) {
+  .arc-card, .arc-copy { animation: none; opacity: 1; }
+  .arc-card { transform: translate(-50%, 50%); }
+}
+
+/* Murmuration wordmark hero (about, team) */
+.mmw-root {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  isolation: isolate;
+  background: var(--mmw-sky);
+}
+.mmw-root canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  max-width: none;
+}
+.mmw-over {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  pointer-events: none;
+}
+.mmw-over [data-interactive],
+.mmw-over a,
+.mmw-over button {
+  pointer-events: auto;
+}
+.mmw-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Liquid sculpture hero (home). Component by guglielmogiannattasio.it, MIT.
+   Kept here rather than an inline <style> so server and client markup match. */
+.sh-root {
+  position: relative; width: 100%; height: var(--sh-h); overflow: hidden; isolation: isolate;
+  container-type: size; transition: background-color .6s ease, color .6s ease;
+  background: var(--sh-bg); color: var(--sh-fg); font-family: var(--sh-body);
+  -webkit-font-smoothing: antialiased; touch-action: pan-y;
+  display: flex; flex-direction: column; box-sizing: border-box;
+}
+.sh-root *, .sh-root *::before, .sh-root *::after { box-sizing: border-box; }
+.sh-stage { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+.sh-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; opacity: 0; transition: opacity .5s ease; }
+.sh-fallback { position: absolute; display: block; max-width: none; user-select: none; -webkit-user-drag: none; transition: opacity .5s ease; }
+.sh-root[data-gl="on"] .sh-canvas { opacity: 1; }
+.sh-root[data-gl="on"] .sh-fallback { opacity: 0; }
+.sh-root[data-swap="1"] .sh-canvas { opacity: 0; transition-duration: .25s; }
+.sh-root[data-swap="1"] .sh-fallback { opacity: 0; transition-duration: .25s; }
+.sh-backdrop {
+  position: absolute; left: 50%; z-index: 0; transform: translate(-50%, -50%); white-space: nowrap;
+  pointer-events: none; user-select: none; font-family: var(--sh-head); font-weight: 600;
+  letter-spacing: -.06em; line-height: .8; color: color-mix(in srgb, var(--sh-fg) 5%, transparent);
+}
+.sh-nav {
+  position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between;
+  gap: 24px; padding: 26px clamp(20px, 3.2cqw, 48px) 0;
+}
+.sh-brand { font-family: var(--sh-head); font-weight: 600; font-size: 17px; letter-spacing: -.02em; color: inherit; text-decoration: none; }
+.sh-links { display: flex; align-items: center; gap: clamp(18px, 2.4cqw, 36px); list-style: none; margin: 0; padding: 0; }
+.sh-link { color: inherit; text-decoration: none; font-size: 13.5px; letter-spacing: -.005em; opacity: .72; transition: opacity .2s; }
+.sh-link:hover { opacity: 1; }
+.sh-theme {
+  display: inline-grid; place-items: center; width: 34px; height: 34px; padding: 0; border-radius: 50%;
+  cursor: pointer; color: inherit; background: transparent;
+  border: 1px solid color-mix(in srgb, var(--sh-fg) 22%, transparent); transition: background .25s, color .25s;
+}
+.sh-theme:hover { background: var(--sh-fg); color: var(--sh-bg); }
+.sh-theme:focus-visible { outline: 2px solid var(--sh-fg); outline-offset: 4px; }
+.sh-navcta {
+  color: inherit; text-decoration: none; font-size: 13.5px; padding: 8px 14px;
+  border: 1px solid color-mix(in srgb, var(--sh-fg) 22%, transparent); border-radius: 999px;
+  transition: background .25s, color .25s;
+}
+.sh-navcta:hover { background: var(--sh-fg); color: var(--sh-bg); }
+.sh-hint {
+  position: absolute; z-index: 1; transform: translate(-50%, 0); display: flex; align-items: center; gap: 10px;
+  white-space: nowrap; font-size: 11px; letter-spacing: .14em; text-transform: uppercase; opacity: .5;
+  pointer-events: none; transition: opacity .8s ease;
+}
+.sh-hint::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; animation: sh-pulse 2.4s ease-in-out infinite; }
+.sh-root[data-touched="1"] .sh-hint { opacity: 0; }
+@keyframes sh-pulse { 0%, 100% { transform: scale(.6); opacity: .45 } 50% { transform: scale(1); opacity: 1 } }
+.sh-spacer { flex: 1 1 auto; min-height: 0; }
+.sh-content {
+  position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
+  align-items: end; gap: clamp(24px, 4cqw, 72px);
+  padding: 0 clamp(20px, 3.2cqw, 48px) clamp(28px, 3.4cqw, 52px);
+}
+.sh-eyebrow {
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase; opacity: .62;
+  margin: 0 0 clamp(14px, 1.6cqw, 22px); display: flex; align-items: center; gap: 12px;
+}
+.sh-eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; opacity: .7; }
+.sh-h1 {
+  font-family: var(--sh-head); font-weight: 500; font-size: clamp(40px, min(6.6cqw, 11.5cqh), 124px);
+  line-height: .92; letter-spacing: -.045em; margin: 0; text-wrap: balance;
+}
+.sh-h1 .sh-line { display: block; }
+.sh-accent { font-family: var(--sh-accent); font-style: italic; font-weight: 400; letter-spacing: -.02em; color: var(--sh-acc); }
+.sh-aside { max-width: 400px; justify-self: end; padding-bottom: .6em; }
+.sh-body { font-size: clamp(15px, 1.1cqw, 17px); line-height: 1.5; letter-spacing: -.01em; margin: 0 0 26px; opacity: .78; text-wrap: pretty; }
+.sh-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; }
+.sh-btn {
+  display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border-radius: 999px;
+  background: var(--sh-fg); color: var(--sh-bg); text-decoration: none; font-size: 14.5px; font-weight: 500;
+  letter-spacing: -.01em; transition: transform .3s cubic-bezier(.2, .7, .2, 1), opacity .2s;
+}
+.sh-btn:hover { transform: translateY(-1px); }
+.sh-btn svg, .sh-txt svg { transition: transform .3s cubic-bezier(.2, .7, .2, 1); }
+.sh-btn:hover svg, .sh-txt:hover svg { transform: translateX(3px); }
+.sh-txt {
+  display: inline-flex; align-items: center; gap: 8px; color: inherit; text-decoration: none;
+  font-size: 14.5px; font-weight: 500; letter-spacing: -.01em; padding: 4px 0;
+  border-bottom: 1px solid color-mix(in srgb, var(--sh-fg) 30%, transparent);
+}
+.sh-root a:focus-visible { outline: 2px solid var(--sh-fg); outline-offset: 4px; }
+.sh-credit {
+  position: absolute; z-index: 2; right: clamp(20px, 3.2cqw, 48px); bottom: 10px; font-size: 10px;
+  letter-spacing: .06em; color: inherit; opacity: .38; text-decoration: none;
+}
+.sh-credit:hover { opacity: .8; }
+@container (max-width: 1023px) {
+  .sh-content { grid-template-columns: 1fr; gap: 28px; }
+  .sh-aside { justify-self: start; max-width: 520px; padding-bottom: 0; }
+  .sh-h1 { font-size: clamp(40px, min(9.5cqw, 9cqh), 96px); }
+}
+@container (max-width: 767px) { .sh-links li:not(.sh-keep) { display: none; } }
+@container (max-width: 639px) {
+  .sh-nav { padding-top: 20px; }
+  .sh-h1 { font-size: clamp(36px, min(12.5cqw, 7.2cqh), 60px); line-height: .94; }
+  .sh-body { font-size: 15px; margin-bottom: 20px; }
+  .sh-eyebrow { font-size: 11px; }
+  .sh-ctas { gap: 18px; }
+  .sh-btn { height: 48px; }
+  .sh-content { padding-bottom: 40px; }
+  .sh-credit { right: auto; left: 50%; transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sh-hint::before { animation: none; }
+  .sh-canvas, .sh-fallback, .sh-btn, .sh-btn svg, .sh-txt svg { transition: none; }
+}
+
+/* Home hero: three headline lines instead of the block's original two, so the
+   type is capped lower and the copy clears the bottom of the screen. */
+.home-hero .sh-h1 { font-size: clamp(32px, min(5cqw, 7.6cqh), 86px); }
+.home-hero .sh-content { padding-bottom: clamp(88px, 12cqh, 160px); align-items: end; }
+.home-hero .sh-aside { padding-bottom: 0; }
+@container (max-width: 1023px) {
+  .home-hero .sh-h1 { font-size: clamp(32px, min(8cqw, 6.4cqh), 68px); }
+}
+@container (max-width: 639px) {
+  .home-hero .sh-h1 { font-size: clamp(28px, min(10cqw, 5.4cqh), 46px); }
+}
