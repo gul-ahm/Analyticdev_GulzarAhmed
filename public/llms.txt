@@ -1,11 +1,11 @@
 # Analytics Dev
 
 > Founder-led web development and AI systems studio in Mumbai, India.
-> Fixed-price websites for small businesses (₹35,000–₹1,20,000, 2–4 weeks)
-> and production AI/data systems for healthcare, construction, finance, and gaming.
+> Fixed-price websites at ₹35,000 to ₹45,000, web applications at ₹700 to ₹800
+> an hour, and AI and data systems at $10 an hour, for healthcare, construction,
+> retail, real estate and education.
 
 ## Services
-- [Small Business Websites](https://analyticsdev.xyz/small-business-websites): Fixed-price packages, pricing and inclusions.
 - [Pricing](https://analyticsdev.xyz/pricing): All tiers with what is and isn't included.
 - [AI & Data Systems](https://analyticsdev.xyz/services): Autonomous agents, pipelines, decision systems.
 

@@ -44,13 +44,13 @@ const pages = [
             dna_headline: 'Three things I hold to.',
             dna_subtext: 'These are not slogans. They are the reasons projects here finish on the date I gave you.',
             belief_1_title: 'A price you can plan around',
-            belief_1_text: 'You get one number in writing before any work starts, and it does not move unless you change what you asked for. Small businesses cannot run on open-ended hourly bills, so I do not send them.',
+            belief_1_text: 'You get one number in writing before any work starts, and it does not move unless you change what you asked for. Nobody should have to budget against an open-ended hourly bill, so I do not send them.',
             belief_2_title: 'Your data is messy. That is normal.',
             belief_2_text: 'Nobody hands me a clean spreadsheet. Dates in four formats, blank rows, two names for the same customer. I plan for that instead of asking you to fix it first, because that is what the real file always looks like.',
             belief_3_title: 'Built to be handed over',
             belief_3_text: 'The code, the domain and the hosting accounts are in your name from day one. If you hire someone else next year, they should be able to read what I wrote and carry on. That is the test I build to.',
             founder_header: 'Why I started this',
-            founder_quote: '\u201cI kept meeting small businesses who had been quoted a number they could not justify, for software they did not need. I wanted to be the person who tells them what they actually need, puts a number against it in writing, and then builds that.\u201d',
+            founder_quote: '\u201cI kept meeting people who had been quoted a number they could not justify, for software they did not need. I wanted to be the person who tells them what they actually need, puts a number against it in writing, and then builds that.\u201d',
             founder_name: 'Gulzar Ahmed',
             founder_cta: 'Tell me what you need'
         }

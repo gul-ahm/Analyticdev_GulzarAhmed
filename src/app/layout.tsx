@@ -29,10 +29,10 @@ export const metadata: Metadata = {
   description: 'Analytics Dev is one engineer in Mumbai. Websites at a fixed ₹35,000 to ₹45,000, web applications at ₹700 to ₹800 an hour, AI and data systems at $10 an hour. The code is yours from day one.',
   keywords: [
     'Web Development Mumbai',
-    'Affordable Website Development for Small Business',
     'Next.js Development India',
+    'Web Application Development',
     'AI Systems',
-    'Small Business Websites',
+    'Data Engineering',
     'Website Development'
   ],
   authors: [{ name: 'Gulzar Ahmed', url: 'https://linkedin.com/in/gul-ahm' }],
@@ -74,7 +74,7 @@ const organizationSchema = {
       "alternateName": "AnalyticsDev",
       "url": "https://analyticsdev.xyz",
       "email": "hello@analyticsdev.xyz",
-      "description": "Founder-led web development and AI systems studio building websites and data systems for small businesses in India and the GCC.",
+      "description": "Founder-led web development and AI systems studio building websites, web applications and data systems in India and the GCC.",
       "founder": {
         "@type": "Person",
         "name": "Gulzar Ahmed",
@@ -112,8 +112,8 @@ const organizationSchema = {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Small Business Website Development",
-              "url": "https://analyticsdev.xyz/small-business-websites"
+              "name": "Website Development",
+              "url": "https://analyticsdev.xyz/pricing"
             },
             "minPrice": "35000",
             "maxPrice": "45000",

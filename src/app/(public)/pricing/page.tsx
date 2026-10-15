@@ -188,10 +188,10 @@ export default function PricingPage() {
                         Request a Written Quote
                     </Link>
                     <Link
-                        href="/small-business-websites"
+                        href="/services"
                         className="py-3 px-6 rounded-xl border border-slate-700 text-slate-300 font-medium text-sm hover:bg-slate-800 transition-colors"
                     >
-                        View Small Business Guide
+                        See what is included
                     </Link>
                 </div>
             </div>

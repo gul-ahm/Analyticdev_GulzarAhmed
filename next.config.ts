@@ -21,6 +21,17 @@ const nextConfig: NextConfig = {
     config.resolve.alias.canvas = false;
     return config;
   },
+  // The small business page was removed. Anything already linking to it, or
+  // indexed under it, lands on pricing instead of a 404.
+  async redirects() {
+    return [
+      {
+        source: '/small-business-websites',
+        destination: '/pricing',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

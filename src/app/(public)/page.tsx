@@ -11,6 +11,7 @@ import StatsGrid from '@/components/public/StatsGrid';
 import ProjectCarousel from '@/components/public/ProjectCarousel';
 import HomeHero from '@/components/public/HomeHero';
 import SiteLoader from '@/components/public/SiteLoader';
+import { isCrawler } from '@/lib/is-bot';
 import ReviewCarousel from '@/components/public/ReviewCarousel';
 
 export const dynamic = 'force-dynamic';
@@ -42,10 +43,13 @@ const renderText = (text: string) => {
 
 export default async function Home() {
   const { featuredProjects, content, reviews } = await getHomeData();
+  // A crawler never waits out an eight second animation, and an overlay across
+  // the page is the sort of thing a search engine reads as hidden content.
+  const crawler = await isCrawler();
 
   return (
     <div className="bg-transparent selection:bg-slate-200 selection:text-slate-900">
-      <SiteLoader />
+      {crawler ? null : <SiteLoader />}
       {/* GLOBAL GRAIN & VIGNETTE ARE HANDLED IN LAYOUT/BACKGROUND COMPONENT */}
 
       {/* 

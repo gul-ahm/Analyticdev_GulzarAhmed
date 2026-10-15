@@ -132,7 +132,7 @@ export default async function AboutPage() {
                             {
                                 step: '01',
                                 title: content.belief_1_title || 'A price you can plan around',
-                                text: content.belief_1_text || "You get one number in writing before any work starts, and it does not move unless you change what you asked for. Small businesses cannot run on open-ended hourly bills, so I do not send them."
+                                text: content.belief_1_text || "You get one number in writing before any work starts, and it does not move unless you change what you asked for. Nobody should have to budget against an open-ended hourly bill, so I do not send them."
                             },
                             {
                                 step: '02',
@@ -183,7 +183,7 @@ export default async function AboutPage() {
                             <figure className="mt-10 border-l-4 border-slate-900 pl-8">
                                 <blockquote className="text-lg font-medium leading-relaxed text-slate-900">
                                     <p>
-                                        {renderText(content.founder_quote) || "“I kept meeting small businesses who had been quoted a number they could not justify, for software they did not need. I wanted to be the person who tells them what they actually need, puts a number against it in writing, and then builds that.”"}
+                                        {renderText(content.founder_quote) || "“I kept meeting people who had been quoted a number they could not justify, for software they did not need. I wanted to be the person who tells them what they actually need, puts a number against it in writing, and then builds that.”"}
                                     </p>
                                 </blockquote>
                                 <figcaption className="mt-6 text-sm leading-6 text-slate-600">

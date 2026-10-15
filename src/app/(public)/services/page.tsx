@@ -39,7 +39,7 @@ const serviceFaqs = [
     },
     {
         question: "What is the typical delivery timeline for a custom web application or website?",
-        answer: "A small business website is 14 to 21 working days. A full web application or an AI integration is 21 to 35, depending on how complex the data is and how many other systems it has to talk to. The date goes in the contract."
+        answer: "A website is 14 to 21 working days. A full web application or an AI integration is 21 to 35, depending on how complex the data is and how many other systems it has to talk to. The date goes in the contract."
     },
     {
         question: "What performance guarantees and post-launch support are included?",

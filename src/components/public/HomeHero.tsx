@@ -65,14 +65,6 @@ export default function HomeHero({ tagline, headline, subtext, ctaPrimary }: Hom
                             <ArrowRight className="h-3.5 w-3.5" />
                         </Link>
                     </div>
-                    <p className="mt-5 text-sm opacity-70">
-                        <Link
-                            href="/small-business-websites"
-                            className="underline decoration-current/30 underline-offset-4 transition-opacity hover:opacity-100"
-                        >
-                            Packages for small businesses
-                        </Link>
-                    </p>
                 </div>
             </SculptureHero>
         </section>

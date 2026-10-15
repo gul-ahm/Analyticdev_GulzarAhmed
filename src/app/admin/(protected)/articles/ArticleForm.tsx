@@ -142,7 +142,7 @@ export default function ArticleForm({
                         className={input}
                         value={form.title}
                         onChange={(e) => set('title', e.target.value)}
-                        placeholder="What a small business website should actually cost"
+                        placeholder="What a website should actually cost"
                     />
                 </div>
 
@@ -366,7 +366,7 @@ export default function ArticleForm({
                         className={input}
                         value={form.tags}
                         onChange={(e) => set('tags', e.target.value)}
-                        placeholder="pricing, websites, small business"
+                        placeholder="pricing, websites, web applications"
                     />
                 </div>
             </section>

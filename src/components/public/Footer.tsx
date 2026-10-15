@@ -64,7 +64,6 @@ export default async function Footer() {
                                     { label: 'Work', href: '/projects' },
                                     { label: 'Services', href: '/services' },
                                     { label: 'Pricing', href: '/pricing' },
-                                    { label: 'Small Business', href: '/small-business-websites' },
                                     { label: 'About', href: '/about' },
                                     { label: 'Contact', href: '/contact' }
                                 ].map((item) => (
